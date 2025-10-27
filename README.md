@@ -1,3 +1,6 @@
+<img src="ASI-Logo.png" alt="Logo da Linguagem ASI" width="200"/> <!-- Imagem com largura definida -->
+
+
 Compilador para a Linguagem ASI
 
 Este projeto é um trabalho acadêmico para a disciplina de Compiladores, consistindo na criação de um compilador (tradutor) para uma linguagem de brinquedo chamada ASI.
