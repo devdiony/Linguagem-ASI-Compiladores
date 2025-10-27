@@ -1,0 +1,38 @@
+--- Arquivos de Cache e Bytecode do Python ---
+
+pycache/
+*.py[cod]
+*$py.class
+
+--- Ambientes Virtuais (ex: venv) ---
+
+venv/
+ENV/
+env/
+*.env
+.env
+
+--- Arquivos de IDEs (ex: VSCode, PyCharm) ---
+
+.vscode/
+.idea/
+
+--- Arquivos de Sistema Operacional ---
+
+.DS_Store
+Thumbs.db
+
+--- Arquivos Gerados pelo Compilador (Saída C) ---
+
+*.c
+*.o
+*.out
+*.exe
+
+Exceções: Mantenha os arquivos .c se eles forem exemplos
+
+Mas no nosso caso, o 'teste.c' é gerado, então deve ser ignorado.
+
+teste.c
+saida.c
+saida
