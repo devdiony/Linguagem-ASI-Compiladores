@@ -7,28 +7,63 @@
 //        Gabriel Jonas Lucio,
 //        Manel,
 //        Sergio Filho.
+// Arquivo: teste.asi
+// Demonstração completa das funcionalidades da linguagem ASI
 // teste.asi
-// Arquivo de teste
-// Testa operações aritméticas e booleanas
-// Declaração com expressão
 
-base.inteiro = 10;
-altura.inteiro = 5 * 2;
-area.inteiro = base * altura;
+// --- Declaração de Variáveis Primitivas ---
+contador.inteiro = 0;
+saldo.decimal = 150.75;
+pi_preciso.duplo = 3.1415926535;
+letra.caractere = 'A';
+ativo.booleano = verdadeiro;
+mensagem.texto = "Ola ASI!"; // Nota: 'texto' atualmente só suporta literais
 
-// Teste de booleano (verdadeiro = 1, falso = 0)
-// Esperado: 1 + 5 = 6
-resultado.inteiro = verdadeiro + 5;
+// --- Declaração de Vetor e Matriz ---
+notas.decimal[5];          // Vetor de 5 decimais
+tabuleiro.caractere[3][3]; // Matriz 3x3 de caracteres
 
-// Esperado: 10 * 0 = 0
-outro.inteiro = 10 * falso;
+// --- Operações e Atribuições ---
+notas[0] = 9.5;
+notas[1] = 7.0;
+tabuleiro[0][0] = 'X';
+tabuleiro[1][1] = 'O';
 
-// Declaração de vetor
-numeros.inteiro[10];
+calculo.inteiro = 10 + (2 * 5); // Precedência de operadores
+resultado_bool.inteiro = ativo + 5; // Operação com booleano (verdadeiro -> 1) -> resultado_bool será 6
 
-// Atribuição com expressão complexa
-// Acesso a vetor usa expressão
-numeros[0] = 100;
-numeros[1 + 1] = 50; // Deve acessar numeros[2]
-numeros[resultado] = 10; // Deve acessar numeros[6]
+// --- Estrutura Condicional (se/eSe) ---
+se (saldo > 100.0) {
+    escreva("Saldo maior que 100.");
+} eSe {
+    escreva("Saldo baixo.");
+}
+
+se (ativo == falso) {
+    escreva("Sistema inativo."); // Não deve executar
+}
+
+// --- Laço de Repetição (ateQue / while) ---
+escreva("Contagem (while):");
+ateQue (contador < 3) {
+    escreva(" ", contador);
+    contador = contador + 1;
+}
+escreva("\n"); // Adiciona quebra de linha
+
+// --- Laço de Repetição (ate / for) ---
+escreva("Iteracao (for):");
+ate (i.inteiro = 0; i < 2; i = i + 1) {
+    escreva(" ", i);
+    notas[i+2] = 8.0; // Acessando vetor dentro do loop
+}
+escreva("\n");
+
+// --- Demonstração de String e Buffer Overflow ---
+buffer_pequeno.caractere[10];
+copiar_texto(buffer_pequeno, "1234567890"); // >> ALERTA: Buffer Overflow! <<
+// A string "1234567890" precisa de 11 bytes (10 + '\0'), mas o buffer só tem 10.
+
+escreva("Conteudo (potencialmente corrompido) do buffer: ", buffer_pequeno);
+escreva("\nFim do programa ASI.\n");
 
